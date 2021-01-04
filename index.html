@@ -1,0 +1,212 @@
+<html>
+
+<head>
+
+    <title>gondal</title>
+	<link href="https://fonts.googleapis.com/css2?family=Oxygen&display=swap" rel="stylesheet">
+	<link href="favicon.ico" rel='icon' type='image/x-icon'/>
+    <meta name="viewport" content="initial-scale=1">
+    <script src="title.js"/></script>
+    <style type="text/css">
+
+		/* ---- reset ---- */
+		body {
+          	background-image: url("gondal.gif");
+          	background-repeat: no-repeat;
+          	background-size: cover;
+          	background-position: 50% 50%;
+          	margin: 0;
+		}
+
+		canvas {
+          	display: block;
+          	vertical-align: bottom;
+		}
+
+		/* ---- other shit ---- */
+        .main,.sub {
+          	color: #ffffff;
+          	font-family: 'Oxygen', sans-serif;
+          	text-align: center;
+  			-webkit-touch-callout: none; /* iOS Safari */
+    		-webkit-user-select: none; /* Safari */
+     		-khtml-user-select: none; /* Konqueror HTML */
+       		-moz-user-select: none; /* Firefox */
+        	-ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently supported by Chrome and Opera */
+        }
+
+        .main {
+            font-size: 12vw;
+            margin-top: 4%;
+    	  	position: absolute;
+    	  	left: 50%;
+    	  	top: 18%;
+    	  	transform: translate(-50%, -50%);    
+    	  	-webkit-transform: translate(-50%, -50%);
+    	  	-moz-transform: translate(-50%, -50%);
+    	  	-ms-transform: translate(-50%, -50%);
+    	  	-o-transform: translate(-50%, -50%);
+        }
+
+        .sub {
+            font-size: 2vw;
+    	  	position: absolute;
+    	  	left: 50%;
+    	  	top: 60%;
+    	  	transform: translate(-50%, -50%);    
+    	  	-webkit-transform: translate(-50%, -50%);
+    	  	-moz-transform: translate(-50%, -50%);
+    	  	-ms-transform: translate(-50%, -50%);
+    	  	-o-transform: translate(-50%, -50%);
+        }
+
+		.sub a {
+    		transition: all 500ms;
+		}
+    
+		.sub a:hover {
+    		font-size: 44px;
+    		color: #ff03fb;
+		}
+
+		a {
+			color: white;
+			text-decoration:  none;
+		}
+
+		a:hover {
+			color: #8c8692;
+		}
+		
+    </style>
+</head>
+
+<body>
+
+	<center>
+    <div class="main">
+        gondal
+    </div>
+
+    <div class="sub">
+    <p>
+		<a href="army" target="_blank">army</a> | <a href="groovin" target="_blank">groovin</a> | <a href="based" target="_blank">based</a> | <a href="gondal" target="_blank">gondal</a> 
+	</p>
+
+	<p>
+		<a href="fuckbingus" target="_blank">fUCK bingus</a>
+	</p>
+    </div>
+
+
+    <iframe id="audio" name="audio" src="silence.mp3" style="display:none"></iframe>
+
+    <audio autoplay="" loop="">
+        <source src="song.mp3">
+        <script>
+            var song = document.currentScript.parentElement;
+            song.volume = 0.12;
+        </script>
+    </audio>
+	
+<script language = "JavaScript" >
+document.onkeypress = function(event) {
+    event = (event || window.event);
+    if (event.keyCode == 123) {
+      //alert('No F-12');
+      return false;
+    }
+}
+document.onmousedown = function(event) {
+    event = (event || window.event);
+    if (event.keyCode == 123) {
+        //alert('No F-keys');
+        return false;
+    }
+}
+document.onkeydown = function(event) {
+    event = (event || window.event);
+    if (event.keyCode == 123) {
+        //alert('No F-keys');
+        return false;
+    }
+}
+var message = ":o";
+
+function clickIE() {
+    if (document.all) {
+        (message);
+        return false;
+    }
+}
+
+function clickNS(e) {
+    if (document.layers || (document.getElementById && !document.all)) {
+        if (e.which == 2 || e.which == 3) {
+            (message);
+            return false;
+        }
+    }
+}
+if (document.layers) {
+    document.captureEvents(Event.MOUSEDOWN);
+    document.onmousedown = clickNS;
+} else {
+    document.onmouseup = clickNS;
+    document.oncontextmenu = clickIE;
+}
+document.oncontextmenu = new Function("return false")
+
+function disableCtrlKeyCombination(e) {
+    var forbiddenKeys = new Array('a', 'n', 'c', 'x', 'v', 'j', 'w');
+    var key;
+    var isCtrl;
+    if (window.event) {
+        key = window.event.keyCode;
+        if (window.event.ctrlKey)
+            isCtrl = true;
+        else
+            isCtrl = false;
+    } else {
+        key = e.which;
+        if (e.ctrlKey)
+            isCtrl = true;
+        else
+            isCtrl = false;
+    }
+    if (isCtrl) {
+        for (i = 0; i <
+            forbiddenKeys.length; i++) {
+            if (forbiddenKeys[i].toLowerCase() == String.fromCharCode(key).toLowerCase()) {
+                alert('Key combination CTRL + ' + String.fromCharCode(key) + ' has been disabled.');
+                return false;
+            }
+        }
+    }
+    return true;
+}
+
+document.onkeydown = function(e) {
+  if(event.keyCode == 123) {
+     return false;
+  }
+  if(e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
+     return false;
+  }
+  if(e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)) {
+     return false;
+  }
+  if(e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
+     return false;
+  }
+  if(e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
+     return false;
+  }
+}
+
+</script>
+
+</body>
+
+</html>
